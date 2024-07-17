@@ -1,0 +1,19 @@
+import axios from "axios"
+
+
+
+
+export const commonAPI = async(httpRequest , url ,reqBody)=>{
+    const reqConfig ={
+        method:httpRequest,
+        url,
+        data:reqBody,
+        headers:{"content-Type":"application/json"}
+
+    }
+ return await  axios(reqConfig).then((result)=>{
+        return result
+    }).catch((err)=>{
+        return err
+    })
+}
